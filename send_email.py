@@ -14,4 +14,4 @@ def send_email(content):
 
     with smtplib.SMTP_SSL(host, port, context=context) as server:
         server.login(username, password)
-        server.sendmail(username, receiver, content)
+        server.sendmail(from_addr=username, to_addrs=receiver, msg=content)
